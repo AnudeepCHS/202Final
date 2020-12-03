@@ -1,0 +1,4 @@
+{   
+    "mongoURI": "mongodb+srv://202_final:final_202@cluster0.nmzgd.mongodb.net/202_final?retryWrites=true&w=majority",    
+    "jwtSecret": "CMPE202Final"
+}
