@@ -21,7 +21,7 @@ export default class ViewListing extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3001/user/listings/'+this.props.match.params.id)
+    axios.get('http://52.89.223.218:3001/user/listings/'+this.props.match.params.id)
       .then(response => {
         this.setState({ listing: response.data});
       })   
@@ -50,7 +50,7 @@ export default class ViewListing extends Component {
 
   onSave(e) {
     e.preventDefault();
-    axios.put('http://localhost:3001/user/favHomes/'+this.state.listing._id, {email: localStorage.getItem('email')}, 
+    axios.put('http://52.89.223.218:3001/user/favHomes/'+this.state.listing._id, {email: localStorage.getItem('email')}, 
         { headers: {"Authorization" : `Bearer ${localStorage.getItem('jwtToken')}`} })
         .then(res => {
           console.log(res);
@@ -73,7 +73,7 @@ export default class ViewListing extends Component {
 
     console.log(body);
     
-    axios.post('http://localhost:3001/user/applications/', body, 
+    axios.post('http://52.89.223.218:3001/user/applications/', body, 
         { headers: {"Authorization" : `Bearer ${localStorage.getItem('jwtToken')}`} })
         .then(res => {
           console.log(res);

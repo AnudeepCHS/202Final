@@ -45,7 +45,7 @@ export default class SignupAdmin extends Component {
       password: this.state.password,
     }
 
-    axios.post('http://localhost:3001/admin/signup', user)
+    axios.post('http://52.89.223.218:3001/admin/signup', user)
       .then(res => console.log(res.data));
 
     this.setState({

@@ -21,7 +21,7 @@ export default class ReviewApplication extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3001/user/applications/'+this.props.match.params.id, 
+    axios.get('http://52.89.223.218:3001/user/applications/'+this.props.match.params.id, 
       { headers: {"Authorization" : `Bearer ${localStorage.getItem('jwtToken')}`} })
       .then(response => {
         this.setState({id: response.data._id});
@@ -47,7 +47,7 @@ export default class ReviewApplication extends Component {
         status: this.state.status
     }
     
-    axios.put('http://localhost:3001/user/applications/review', body, 
+    axios.put('http://52.89.223.218:3001/user/applications/review', body, 
         { headers: {"Authorization" : `Bearer ${localStorage.getItem('jwtToken')}`} })
         .then(res => {
           console.log(res);

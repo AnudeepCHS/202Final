@@ -16,7 +16,7 @@ export default class UpdateUser extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3001/user/user/'+this.props.match.params.id,
+    axios.get('http://52.89.223.218:3001/user/user/'+this.props.match.params.id,
       { headers: {"Authorization" : `Bearer ${localStorage.getItem('jwtToken')}`} })
       .then(res => {
         this.setState({user: res.data});
@@ -29,7 +29,7 @@ export default class UpdateUser extends Component {
   }
 
   onSubmit(e) {
-    axios.put('http://localhost:3001/user/user/'+this.props.match.params.id, this.state, 
+    axios.put('http://52.89.223.218:3001/user/user/'+this.props.match.params.id, this.state, 
         { headers: {"Authorization" : `Bearer ${localStorage.getItem('jwtToken')}`} })
         .then(res => {
           console.log(res);
@@ -37,7 +37,7 @@ export default class UpdateUser extends Component {
   }
 
   onDelete(e) {
-    axios.delete('http://localhost:3001/user/user/'+this.props.match.params.id,
+    axios.delete('http://52.89.223.218:3001/user/user/'+this.props.match.params.id,
         { headers: {"Authorization" : `Bearer ${localStorage.getItem('jwtToken')}`} })
         .then(res => {
           console.log(res);

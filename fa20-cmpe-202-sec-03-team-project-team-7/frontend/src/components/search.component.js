@@ -119,7 +119,7 @@ export default class Search extends Component {
 
   onSave(e) {
     e.preventDefault();
-    axios.post('http://localhost:3001/user/favSearches/', this.state, 
+    axios.post('http://52.89.223.218:3001/user/favSearches/', this.state, 
         { headers: {"Authorization" : `Bearer ${localStorage.getItem('jwtToken')}`} })
         .then(res => {
           console.log(res);

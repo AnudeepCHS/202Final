@@ -32,7 +32,7 @@ export default class ViewFavSearches extends Component {
   }
 
   componentDidMount() {
-    axios.post('http://localhost:3001/user/favSearches/searchEmail', {email: localStorage.getItem('email')},  
+    axios.post('http://52.89.223.218:3001/user/favSearches/searchEmail', {email: localStorage.getItem('email')},  
       { headers: {"Authorization" : `Bearer ${localStorage.getItem('jwtToken')}`} })
       .then(res => {
         console.log(res.data);

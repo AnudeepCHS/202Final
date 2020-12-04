@@ -29,7 +29,7 @@ export default class ViewListings extends Component {
 
     var body = JSON.parse(localStorage.getItem('currentSearch'));
     console.log(localStorage.getItem('currentSearch'));
-    axios.post('http://localhost:3001/user/listings/search', body)
+    axios.post('http://52.89.223.218:3001/user/listings/search', body)
       .then(res => {
         this.setState({listings: res.data});
       });

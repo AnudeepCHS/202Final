@@ -38,7 +38,7 @@ export default class LoginAdmin extends Component {
 
     console.log(admin);
 
-    axios.post('http://localhost:3001/admin/login', admin)
+    axios.post('http://52.89.223.218:3001/admin/login', admin)
       .then(res => {
         localStorage.setItem('name', res.data.name);
         localStorage.setItem('id', res.data.id);

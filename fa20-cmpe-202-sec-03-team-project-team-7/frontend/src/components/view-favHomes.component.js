@@ -25,7 +25,7 @@ export default class ViewFavHomes extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3001/user/favHomes/'+localStorage.getItem('id'), 
+    axios.get('http://52.89.223.218:3001/user/favHomes/'+localStorage.getItem('id'), 
       { headers: {"Authorization" : `Bearer ${localStorage.getItem('jwtToken')}`} })
       .then(res => {
         console.log(res.data);

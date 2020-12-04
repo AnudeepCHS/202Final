@@ -27,11 +27,11 @@ export default class ViewListingsSearch extends Component {
   componentDidMount() {
     console.log(this.props.match.params.id);
 
-    axios.get('http://localhost:3001/user/favSearches/'+this.props.match.params.id, 
+    axios.get('http://52.89.223.218:3001/user/favSearches/'+this.props.match.params.id, 
       { headers: {"Authorization" : `Bearer ${localStorage.getItem('jwtToken')}`} })
       .then(res => {
         console.log(res.data);
-        axios.post('http://localhost:3001/user/listings/search', res.data[0])
+        axios.post('http://52.89.223.218:3001/user/listings/search', res.data[0])
         .then(res => {
           console.log(res.data);
           this.setState({listings: res.data});

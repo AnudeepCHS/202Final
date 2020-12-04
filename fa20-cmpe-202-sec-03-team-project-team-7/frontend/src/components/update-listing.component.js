@@ -44,7 +44,7 @@ export default class UpdateListing extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3001/user/listings/'+this.props.match.params.id)
+    axios.get('http://52.89.223.218:3001/user/listings/'+this.props.match.params.id)
       .then(res => {
         this.setState({street: res.data.street});
         this.setState({city: res.data.city});
@@ -120,7 +120,7 @@ export default class UpdateListing extends Component {
   }
 
   onSubmit(e) {
-    axios.put('http://localhost:3001/user/listings/', this.state, 
+    axios.put('http://52.89.223.218:3001/user/listings/', this.state, 
         { headers: {"Authorization" : `Bearer ${localStorage.getItem('jwtToken')}`} })
         .then(res => {
           console.log(res);
@@ -133,7 +133,7 @@ export default class UpdateListing extends Component {
       ownerEmail: this.state.ownerEmail
     }
 
-    axios.delete('http://localhost:3001/user/listings/',
+    axios.delete('http://52.89.223.218:3001/user/listings/',
         { headers: {"Authorization" : `Bearer ${localStorage.getItem('jwtToken')}`}, data: body })
         .then(res => {
           console.log(res);

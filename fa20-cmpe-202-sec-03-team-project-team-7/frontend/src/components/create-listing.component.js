@@ -100,7 +100,7 @@ export default class CreateListing extends Component {
   onSubmit(e) {
     e.preventDefault();
     console.log(localStorage.getItem('jwtToken'));
-    axios.post('http://localhost:3001/user/listings/', this.state, 
+    axios.post('http://52.89.223.218:3001/user/listings/', this.state, 
         { headers: {"Authorization" : `Bearer ${localStorage.getItem('jwtToken')}`} })
         .then(res => {
           console.log(res);

@@ -55,7 +55,7 @@ export default class SignupUser extends Component {
       userType: this.state.userType
     }
 
-    axios.post('http://localhost:3001/user/signup', user)
+    axios.post('http://52.89.223.218:3001/user/signup', user)
       .then(res => console.log(res.data));
 
     this.setState({

@@ -38,7 +38,7 @@ export default class LoginUser extends Component {
 
     console.log(user);
 
-    axios.post('http://localhost:3001/user/login', user)
+    axios.post('http://52.89.223.218:3001/user/login', user)
       .then(res => {
         console.log(res.data);
         localStorage.setItem('name', res.data.name);

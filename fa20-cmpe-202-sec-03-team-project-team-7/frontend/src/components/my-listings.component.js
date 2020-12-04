@@ -31,7 +31,7 @@ export default class MyListings extends Component {
 
   componentDidMount() {
     
-    axios.post('http://localhost:3001/user/listings/myListings', {email: localStorage.getItem('email')}, 
+    axios.post('http://52.89.223.218:3001/user/listings/myListings', {email: localStorage.getItem('email')}, 
         { headers: {"Authorization" : `Bearer ${localStorage.getItem('jwtToken')}`} })
         .then(res => {
             this.setState({listings: res.data});

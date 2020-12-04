@@ -21,7 +21,7 @@ export default class ViewUsers extends Component {
   }
 
   componentDidMount() {    
-    axios.get('http://localhost:3001/user/user', 
+    axios.get('http://52.89.223.218:3001/user/user', 
         { headers: {"Authorization" : `Bearer ${localStorage.getItem('jwtToken')}`} })
         .then(res => {
             this.setState({users: res.data});
